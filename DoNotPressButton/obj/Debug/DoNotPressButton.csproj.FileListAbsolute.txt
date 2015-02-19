@@ -1,0 +1,9 @@
+c:\users\žiga\documents\visual studio 2013\Projects\DoNotPressButton\DoNotPressButton\bin\Debug\DoNotPressButton.exe.config
+c:\users\žiga\documents\visual studio 2013\Projects\DoNotPressButton\DoNotPressButton\bin\Debug\DoNotPressButton.exe
+c:\users\žiga\documents\visual studio 2013\Projects\DoNotPressButton\DoNotPressButton\bin\Debug\DoNotPressButton.pdb
+c:\users\žiga\documents\visual studio 2013\Projects\DoNotPressButton\DoNotPressButton\obj\Debug\DoNotPressButton.csprojResolveAssemblyReference.cache
+c:\users\žiga\documents\visual studio 2013\Projects\DoNotPressButton\DoNotPressButton\obj\Debug\DoNotPressButton.Form1.resources
+c:\users\žiga\documents\visual studio 2013\Projects\DoNotPressButton\DoNotPressButton\obj\Debug\DoNotPressButton.Properties.Resources.resources
+c:\users\žiga\documents\visual studio 2013\Projects\DoNotPressButton\DoNotPressButton\obj\Debug\DoNotPressButton.csproj.GenerateResource.Cache
+c:\users\žiga\documents\visual studio 2013\Projects\DoNotPressButton\DoNotPressButton\obj\Debug\DoNotPressButton.exe
+c:\users\žiga\documents\visual studio 2013\Projects\DoNotPressButton\DoNotPressButton\obj\Debug\DoNotPressButton.pdb
