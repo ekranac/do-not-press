@@ -17,8 +17,12 @@ namespace DoNotPressButton
             InitializeComponent();
         }
         
-        int stevec = 112;
+        int stevec = 191;
         int time = 0;
+
+        bool movingLeft = false;
+        bool movingRight = false;
+        bool firstMoveDone = false;
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -26,6 +30,7 @@ namespace DoNotPressButton
             setText(stevec);
         }
 
+        /* Basic methods */
         public void resetButton()
         {
             redButton.Size = new Size(250, 250);
@@ -47,12 +52,44 @@ namespace DoNotPressButton
             funkyButton9.Visible = false;
             
         }
+        
+        public void changeObjectSize(PictureBox box, int x, int y)
+        {
+            box.Size = new Size(x, y);
+        }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        public void changeObjectLocation(PictureBox box, int x, int y)
+        {
+            box.Location = new Point(x, y);
+        }
+
+        public void getFunky()
+        {
+
+            funkyButton1.Visible = true;
+            funkyButton2.Visible = true;
+            funkyButton3.Visible = true;
+            funkyButton4.Visible = true;
+            funkyButton5.Visible = true;
+            funkyButton6.Visible = true;
+            funkyButton7.Visible = true;
+            funkyButton8.Visible = true;
+            funkyButton9.Visible = true;
+        }
+
+        public void makeVisible(PictureBox box)
+        {
+            box.Visible = true;
+        }
+
+
+        private void redButton_Click(object sender, EventArgs e)
         {
                 stevec += 1;
                 setText(stevec);
         }
+
+        /* End basic methods */
 
         public void setText(int st)
         {
@@ -270,98 +307,84 @@ namespace DoNotPressButton
 	            "The top was open and sitting\ninside was this...",
 	            "Big Red Button",
 	            "And you know what it said?",
-	            "Oh I'll tell you what it said.\nIt said..."
+	            "Oh I'll tell you what it said.\nIt said...",
+                " "
             };
-
 
             switch(st)
             {
                 case 12:
-                    mainLabel.Text = values[st] + " " + st.ToString();
-                    redButton.Size = new Size(10, 10);
-                    redButton.Location = new Point(277, 160);
-                    
+                    mainLabel.Text = values[st];
+                    changeObjectSize(redButton, 10, 10);
+                    changeObjectLocation(redButton, 277, 160);
                     break;
 
                 case 14:
-                    mainLabel.Text = values[st] + " " + st.ToString();
-                    penguinCircle.Visible = true;
-                    penguinCircle.SizeMode = PictureBoxSizeMode.StretchImage;
+                    mainLabel.Text = values[st];
+                    makeVisible(penguinCircle);
                     break;
 
                 case 18:
-                    mainLabel.Text = values[st] + " " + st.ToString();
-                    redButton2.Visible = true;
-                    redButton.Location = new Point(290, 23);
+                    mainLabel.Text = values[st];
+                    makeVisible(redButton2);
+                    changeObjectLocation(redButton, 290, 23);
                     break;
 
                 case 32:
-                    mainLabel.Text = values[st] + " " + st.ToString();
-                    blueButton.Visible = true;
-                    redButton.Location = new Point(290, 23);
+                    mainLabel.Text = values[st];
+                    makeVisible(blueButton);
+                    changeObjectLocation(redButton, 290, 23);
                     break;
 
                 case 55:
-                    mainLabel.Text = values[st] + " " + st.ToString();
+                    mainLabel.Text = values[st];
                     redButton.Location = new Point(157, 220);
                     mainLabel.Location = new Point(12, 23);
                     break;
 
                 case 56:
-                    mainLabel.Text = values[st] + " " + st.ToString();
-                    redButton.Location = new Point(157, 220);
+                    mainLabel.Text = values[st];
+                    changeObjectLocation(redButton, 157, 220);
                     mainLabel.Location = new Point(12, 23);
                     break;
 
                 case 57:
-                    mainLabel.Text = values[st] + " " + st.ToString();
-                    redButton.Location = new Point(157, 220);
+                    mainLabel.Text = values[st];
+                    changeObjectLocation(redButton, 157, 220);
                     mainLabel.Location = new Point(12, 23);
                     break;
 
                 case 69:
-                    mainLabel.Text = values[st] + " " + st.ToString();
+                    mainLabel.Text = values[st];
                     // done in the ticker method below
                     break;
 
                 case 71:
-                    mainLabel.Text = values[st] + " " + st.ToString();
-                    funkyButton1.Visible = true;
-                    funkyButton2.Visible = true;
-                    funkyButton3.Visible = true;
-                    funkyButton4.Visible = true;
-                    funkyButton5.Visible = true;
-                    funkyButton6.Visible = true;
-                    funkyButton7.Visible = true;
-                    funkyButton8.Visible = true;
-                    funkyButton9.Visible = true;
+                    mainLabel.Text = values[st];
+                    getFunky();
 
-                    redButton.Size = new Size(40, 40);
-                    redButton.Location = new Point(250, 205);
+                    changeObjectSize(redButton, 40, 40);
+                    changeObjectLocation(redButton, 250, 205);
                     break;
 
                 case 113:
                     mainLabel.Text = values[st];
-                    redButton.Size = new Size(8, 8);
-                    redButton.Location = new Point(328, 361);
+                    changeObjectSize(redButton, 8, 8);
+                    changeObjectLocation(redButton, 328, 361);
                     break;
 
                 default:
                     mainLabel.Text = values[st];
                     resetButton();
-                    if(stevec==192)
+                    if(stevec==193) // If you're at the end of the array
                     {
-                        stevec = -1;
+                        stevec = -1; // Why -1? Because var 'stevec' goes up by 1 (to 0 in this case) when you click on the button anyway
                     }
                     break;
             }
         }
 
-        bool movingLeft = false;
-        bool movingRight = false;
-        bool firstMoveDone = false;
-
-        public void timer1_Tick(object sender, EventArgs e)
+        public void animateButton(object sender, EventArgs e)
         {
             if(stevec==69)
             {

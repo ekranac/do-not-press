@@ -69,19 +69,19 @@
             this.redButton.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.redButton.TabIndex = 0;
             this.redButton.TabStop = false;
-            this.redButton.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.redButton.Click += new System.EventHandler(this.redButton_Click);
             // 
             // penguinCircle
             // 
             this.penguinCircle.Image = ((System.Drawing.Image)(resources.GetObject("penguinCircle.Image")));
-            this.penguinCircle.Location = new System.Drawing.Point(159, 23);
+            this.penguinCircle.Location = new System.Drawing.Point(157, 23);
             this.penguinCircle.Name = "penguinCircle";
             this.penguinCircle.Size = new System.Drawing.Size(250, 250);
             this.penguinCircle.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.penguinCircle.TabIndex = 0;
             this.penguinCircle.TabStop = false;
             this.penguinCircle.Visible = false;
-            this.penguinCircle.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.penguinCircle.Click += new System.EventHandler(this.redButton_Click);
             // 
             // redButton2
             // 
@@ -93,7 +93,7 @@
             this.redButton2.TabIndex = 0;
             this.redButton2.TabStop = false;
             this.redButton2.Visible = false;
-            this.redButton2.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.redButton2.Click += new System.EventHandler(this.redButton_Click);
             // 
             // blueButton
             // 
@@ -109,7 +109,7 @@
             // timer1
             // 
             this.timer1.Enabled = true;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.timer1.Tick += new System.EventHandler(this.animateButton);
             // 
             // funkyButton1
             // 
