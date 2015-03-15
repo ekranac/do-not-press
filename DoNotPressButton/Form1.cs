@@ -40,6 +40,8 @@ namespace DoNotPressButton
             penguinCircle.Visible = false;
             redButton2.Visible = false;
             blueButton.Visible = false;
+            
+            firstMoveDone = false;
 
             funkyButton1.Visible = false;
             funkyButton2.Visible = false;
